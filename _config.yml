@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
+url: http://fernandopso.github.io
+title: Man Machine
 subtitle: A blogging framework for hackers.
-author: Your Name
+author: fernandopso
 simple_search: http://google.com/search
 description:
 
