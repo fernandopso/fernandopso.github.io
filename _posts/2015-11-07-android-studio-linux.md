@@ -1,46 +1,63 @@
 ---
 layout: post
-title:  "Android Studo no Linux"
+title:  "Android Studio IDE no Elementary OS"
 date:   2015-11-07 22:33:44
 ---
 
-Faça o download do [Android Studio IDE][android_studio], no terminal navegue até o arquivo para extrair o ZIP (único formato disponível para download no site)
+### Dependências
+
+Requer instalação do [Java SE Development Kit][java_se].
+
+Pode ser instalado através do site da [oracle][java_se] ou através do pacote `oracle-java8-installer`
 
 ```
-$ unzip android-studio-ide-{versão-do-seu-arquivo}-linux.zip
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
+```
+
+Verifique
+
+```
+java -version
+```
+
+### Instalação
+
+Baixe o [Android Studio IDE][android_studio] e no terminal navegue até o arquivo para extrair o ZIP (único formato disponível para download no site).
+
+```
+unzip android-studio-ide-{versão-do-seu-arquivo}-linux.zip
 ```
 
 ```
-$ mv android-studio/ ~/
+mv android-studio/ ~/
 ```
 
-Configuração
-=====
-
-Adicione no arquivo *.bashrc* as variaveis de ambiente necessária
+Execute o *bash script* para instalar
 
 ```
-$ export ANDROID_HOME=/home/fernando/android-sdk-linux
+sh ~/android-studio/bin/studio.sh
 ```
 
-```
-$ export PATH=${PATH}:~/android-sdk-linux/tools
-```
+### Configuração
 
-Alias para iniciar o Android Studio digitando android no terminal
+É preciso adicionar nas variáveis de ambiente o *path*  do `android-sdk-linux` e `android-sdk-linux/tools`. Para encontrar o path do `android-sdk-linux` use o comando `find`.
 
 ```
-$ alias android="sudo sh ~/android-studio/bin/studio.sh"
+sudo find / -name android-sdk-linux
 ```
 
-Para encontrar um diretorio o comando `find` é uma mão na roda!
+Adicione no *.bashrc*
 
 ```
-$ sudo find / -name android-sdk-linux
+export ANDROID_HOME=~/android-sdk-linux
+export PATH=${PATH}:~/android-sdk-linux/tools
+alias android="sh ~/android-studio/bin/studio.sh"
 ```
 
-Para abrir o Android Studio basta digitar `android` no terminal.
+Digite `android` no terminal para abrir a ide.
 
-[java]: http://www.java.com/en/download/linux_manual.jsp
 [java_se]: http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
 [android_studio]: http://developer.android.com/sdk/index.html
