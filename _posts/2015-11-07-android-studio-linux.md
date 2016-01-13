@@ -17,6 +17,10 @@ sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java8-set-default
 ```
 
+```
+sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+```
+
 Verifique
 
 ```
@@ -57,7 +61,35 @@ export PATH=${PATH}:~/android-sdk-linux/tools
 alias android="sh ~/android-studio/bin/studio.sh"
 ```
 
-Digite `android` no terminal para abrir a ide.
+Digite `android` no terminal para abrir o Android Studio para um Hello World.
+
+### Gerando APK
+
+Instale o ADB
+
+```
+sudo apt-get install android-tools-adb
+```
+
+No projeto de permissão para o **gradlew**
+
+```
+chmod +x gradlew
+```
+
+User o *debugger* para gerar a apk
+
+
+```
+./gradlew assembleDebug
+
+```
+
+Instale usando o ADB
+
+```
+adb install -r app/build/outputs/apk/app-debug-unaligned.apk
+```
 
 [java_se]: http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
 [android_studio]: http://developer.android.com/sdk/index.html
