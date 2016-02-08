@@ -45,6 +45,12 @@ Execute o *bash script* para instalar
 sh ~/android-studio/bin/studio.sh
 ```
 
+Irá instalar o SDK no diretório `~/android-sdk-linux/`, navegue até a pasta *tools* e execute:
+
+```
+android sdk
+```
+
 ### Configuração
 
 É preciso adicionar nas variáveis de ambiente o *path*  do `android-sdk-linux` e `android-sdk-linux/tools`. Para encontrar o path do `android-sdk-linux` use o comando `find`.
