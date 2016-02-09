@@ -3,13 +3,16 @@ layout: default
 ---
 
 <div class="home">
-
-  <ul class="post-list">
+  <table>
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span> - 
-        <a class="" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
+      <tr>
+        <td width="100" style="border-color: #fff;">
+          <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        </td>
+        <td style="border-color: #fff;">
+          <a class="" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </td>
+      </tr>
     {% endfor %}
-  </ul>
+  </table>
 </div>

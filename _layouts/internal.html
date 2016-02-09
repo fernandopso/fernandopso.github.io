@@ -8,9 +8,6 @@
 </head>
 <body>
     <main>
-        <header class="site-header">
-            <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-        </header>
         {{ content }}
 
         <br/>
@@ -18,6 +15,8 @@
         <hr />
 
         <nav class="site-nav">
+            <a href="{{ site.baseurl }}/">Home</a>
+            |
             <a href="{{ site.baseurl }}/about/" class="{% if page.url == '/about/' %}active{% endif %}">Sobre</a>
 
             {% if site.github_username %}
