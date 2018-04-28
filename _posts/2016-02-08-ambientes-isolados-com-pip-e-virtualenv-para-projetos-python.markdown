@@ -19,8 +19,7 @@ Solução:
 Instale o pip
 
 {% highlight bash %}
-sudo apt-get install python-setuptools python-dev build-essential
-sudo easy_install pip
+sudo apt install python-pip
 {% endhighlight %}
 
 Instale o virtualenv como *root*
